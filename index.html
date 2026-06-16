@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUX Body Studio — Преміум масаж та корекція тіла в Києві</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --cream:#FAF6F0;--cream-dark:#F0E8D8;--cream-mid:#EDE0CC;
+  --gold:#C9A96E;--gold-light:#E8D5A8;--gold-dark:#A07840;
+  --charcoal:#2C2416;--text:#3D3020;--text-light:#7A6A52;
+  --white:#FFFFFF;
+  --shadow:0 20px 60px rgba(44,36,22,.12);--shadow-sm:0 4px 20px rgba(44,36,22,.08)
+}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;font-weight:500}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--cream)}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:22px 60px;display:flex;justify-content:space-between;align-items:center;transition:all .4s}
+nav.scrolled{background:rgba(250,246,240,.96);backdrop-filter:blur(20px);padding:14px 60px;box-shadow:var(--shadow-sm)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--gold);letter-spacing:3px;text-decoration:none}
+.nav-links{display:flex;gap:34px;list-style:none;align-items:center}
+.nav-links a{text-decoration:none;color:var(--text);font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;transition:color .3s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold)!important;color:var(--white)!important;padding:10px 22px;border-radius:30px}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--cream) 0%,var(--cream-mid) 100%)}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 68% 50%,rgba(201,169,110,.13) 0%,transparent 60%),radial-gradient(ellipse at 20% 80%,rgba(201,169,110,.07) 0%,transparent 50%)}
+.hero-deco{position:absolute;top:-150px;right:-150px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(201,169,110,.09) 0%,transparent 70%);pointer-events:none}
+.hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:130px 60px 90px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,169,110,.12);border:1px solid rgba(201,169,110,.3);padding:8px 20px;border-radius:30px;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold-dark);margin-bottom:28px}
+.hero-title{font-family:'Playfair Display',serif;font-size:68px;font-weight:700;line-height:1.1;color:var(--charcoal);margin-bottom:24px}
+.hero-title em{color:var(--gold);font-style:italic}
+.hero-sub{font-size:16px;line-height:1.85;color:var(--text-light);font-weight:500;margin-bottom:44px;max-width:460px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:var(--white);padding:17px 36px;border:none;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;letter-spacing:.8px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:9px;transition:all .3s;box-shadow:0 8px 28px rgba(201,169,110,.38)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 38px rgba(201,169,110,.48)}
+.btn-outline{background:transparent;color:var(--charcoal);padding:16px 36px;border:1.5px solid var(--gold);border-radius:50px;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;letter-spacing:.8px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:9px;transition:all .3s}
+.btn-outline:hover{background:var(--gold);color:var(--white);transform:translateY(-2px)}
+.hero-stats{display:flex;gap:40px;margin-top:56px;padding-top:40px;border-top:1px solid rgba(201,169,110,.2)}
+.stat-num{font-family:'Playfair Display',serif;font-size:34px;font-weight:700;color:var(--gold)}
+.stat-lbl{font-size:11px;color:var(--text-light);letter-spacing:.5px;margin-top:3px}
+.hero-visual{position:relative}
+.hero-card{background:linear-gradient(135deg,#E8D5B0,#C9A96E);border-radius:28px;height:500px;overflow:hidden;position:relative;box-shadow:var(--shadow)}
+.hero-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.float-card{position:absolute;background:var(--white);border-radius:14px;padding:14px 18px;box-shadow:var(--shadow);display:flex;align-items:center;gap:11px}
+.float-card-1{bottom:36px;left:-26px}
+.float-card-2{top:54px;right:-18px}
+.float-icon{width:42px;height:42px;background:linear-gradient(135deg,var(--gold-light),var(--gold));border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.float-text strong{display:block;font-size:13px;font-weight:600;color:var(--charcoal)}
+.float-text span{font-size:11px;color:var(--text-light)}
+
+/* ── SECTIONS ── */
+section{padding:100px 0}
+.container{max-width:1200px;margin:0 auto;padding:0 60px}
+.sec-tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.sec-title{font-family:'Playfair Display',serif;font-size:46px;font-weight:700;line-height:1.2;color:var(--charcoal);margin-bottom:18px}
+.sec-sub{font-size:15px;color:var(--text-light);line-height:1.85;max-width:520px;font-weight:600}
+
+/* ── QUIZ ── */
+.quiz-section{background:linear-gradient(160deg,var(--charcoal) 0%,#3D3020 100%);position:relative;overflow:hidden}
+.quiz-section::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(201,169,110,.07) 0%,transparent 70%);pointer-events:none}
+.quiz-section .sec-title{color:var(--white)}
+.quiz-section .sec-sub{color:rgba(255,255,255,.55)}
+.quiz-section .sec-tag{color:var(--gold-light)}
+.quiz-head{text-align:center;margin-bottom:56px}
+.quiz-progress{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:44px}
+.q-step{width:34px;height:34px;border-radius:50%;border:2px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:rgba(255,255,255,.35);transition:all .4s}
+.q-step.active{border-color:var(--gold);color:var(--gold);background:rgba(201,169,110,.1)}
+.q-step.done{border-color:var(--gold);background:var(--gold);color:var(--white)}
+.q-line{width:56px;height:2px;background:rgba(255,255,255,.1);transition:background .4s}
+.q-line.done{background:var(--gold)}
+.quiz-q{display:none;animation:slideUp .5s ease}
+.quiz-q.active{display:block}
+@keyframes slideUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.q-text{font-family:'Playfair Display',serif;font-size:30px;font-weight:500;color:var(--white);text-align:center;margin-bottom:38px}
+.quiz-opts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:880px;margin:0 auto}
+.quiz-opt{background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.1);border-radius:18px;padding:30px 22px;text-align:center;cursor:pointer;transition:all .3s}
+.quiz-opt:hover{background:rgba(201,169,110,.1);border-color:var(--gold);transform:translateY(-4px)}
+.quiz-opt.sel{background:rgba(201,169,110,.14);border-color:var(--gold)}
+.opt-emoji{font-size:38px;margin-bottom:14px;display:block}
+.opt-img{width:80px;height:110px;object-fit:cover;object-position:center top;margin:0 auto 14px;display:block;border-radius:10px}
+.opt-lbl{font-size:14px;font-weight:500;color:var(--white);margin-bottom:7px}
+.opt-desc{font-size:11px;color:rgba(255,255,255,.45);line-height:1.6}
+.quiz-result{display:none;text-align:center;animation:slideUp .5s ease}
+.quiz-result.active{display:block}
+.res-badge{display:inline-flex;align-items:center;gap:9px;background:rgba(201,169,110,.14);border:1px solid var(--gold);padding:9px 22px;border-radius:30px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light);margin-bottom:20px}
+.res-name{font-family:'Playfair Display',serif;font-size:46px;font-weight:700;color:var(--white);margin-bottom:14px}
+.res-desc{font-size:15px;color:rgba(255,255,255,.6);max-width:580px;margin:0 auto 44px;line-height:1.85}
+.res-video{max-width:680px;margin:0 auto 44px;border-radius:22px;overflow:hidden;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;position:relative;cursor:pointer}
+.play-btn{width:74px;height:74px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;color:var(--white);transition:transform .3s;border:none;cursor:pointer}
+.play-btn:hover{transform:scale(1.1)}
+.res-video-lbl{position:absolute;bottom:18px;left:18px;font-size:12px;color:rgba(255,255,255,.65);background:rgba(0,0,0,.38);padding:5px 14px;border-radius:20px}
+.res-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* ── BEFORE/AFTER ── */
+.ba-section{background:var(--cream)}
+.ba-head{text-align:center;margin-bottom:56px}
+.ba-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:44px;flex-wrap:wrap}
+.ba-tab{padding:9px 26px;border-radius:30px;border:1.5px solid var(--gold-light);background:transparent;color:var(--text-light);font-family:'Montserrat',sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all .3s}
+.ba-tab.active{background:var(--gold);border-color:var(--gold);color:var(--white)}
+.ba-wrap{max-width:840px;margin:0 auto;position:relative;border-radius:26px;overflow:hidden;box-shadow:var(--shadow);user-select:none;touch-action:none}
+.ba-slider{position:relative;height:500px;cursor:ew-resize}
+.ba-before,.ba-after{position:absolute;inset:0}
+.ba-after{clip-path:inset(0 50% 0 0)}
+.ba-before-bg{position:absolute;inset:0;overflow:hidden}
+.ba-after-bg{position:absolute;inset:0;overflow:hidden}
+.ba-before-bg img,.ba-after-bg img{width:100%;height:100%;object-fit:cover}
+.ba-lbl{position:absolute;top:18px;background:rgba(255,255,255,.92);padding:5px 13px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:2px;color:var(--charcoal)}
+.ba-before .ba-lbl{left:18px}
+.ba-after .ba-lbl{right:18px}
+.ba-divider{position:absolute;top:0;bottom:0;left:50%;width:3px;background:var(--white);transform:translateX(-50%);z-index:10;pointer-events:none}
+.ba-handle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;background:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(0,0,0,.18);font-size:18px;color:var(--gold)}
+.ba-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+.ba-stat{background:var(--white);border-radius:16px;padding:22px;text-align:center;box-shadow:var(--shadow-sm)}
+.ba-stat-num{font-family:'Playfair Display',serif;font-size:34px;font-weight:700;color:var(--gold)}
+.ba-stat-lbl{font-size:11px;color:var(--text-light);margin-top:5px;line-height:1.5}
+
+/* ── TEAM ── */
+.team-section{background:linear-gradient(160deg,var(--cream) 0%,var(--cream-dark) 100%)}
+.team-head{text-align:center;margin-bottom:60px}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.team-card{background:var(--white);border-radius:24px;overflow:hidden;box-shadow:var(--shadow-sm);transition:all .4s}
+.team-card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+.team-photo{height:290px;background:#D4B88A;position:relative;overflow:hidden}
+.team-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.team-photo .cert-badge{position:absolute;top:14px;left:14px;background:rgba(255,255,255,.95);padding:5px 13px;border-radius:20px;font-size:10px;font-weight:700;color:var(--gold-dark);letter-spacing:.5px}
+.vid-btn{position:absolute;bottom:14px;right:14px;width:44px;height:44px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--white);cursor:pointer;border:none;box-shadow:0 4px 14px rgba(201,169,110,.4);transition:transform .3s}
+.vid-btn:hover{transform:scale(1.1)}
+.team-info{padding:22px}
+.team-name{font-family:'Playfair Display',serif;font-size:21px;font-weight:600;color:var(--charcoal);margin-bottom:5px}
+.team-role{font-size:12px;color:var(--gold);font-weight:500;letter-spacing:.5px;margin-bottom:12px}
+.team-bio{font-size:12px;color:var(--text-light);line-height:1.75;margin-bottom:14px}
+.team-tags{display:flex;flex-wrap:wrap;gap:6px}
+.t-tag{background:var(--cream-dark);padding:4px 11px;border-radius:20px;font-size:10px;color:var(--text-light);font-weight:500}
+
+/* ── SERVICES ── */
+.srv-section{background:var(--cream)}
+.srv-head{text-align:center;margin-bottom:60px}
+.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.srv-card{background:var(--white);border-radius:22px;overflow:hidden;box-shadow:var(--shadow-sm);transition:all .4s;cursor:pointer;display:flex;flex-direction:column}
+.srv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.srv-img{height:210px;overflow:hidden;background:#D4B88A}
+.srv-img img{width:100%;height:100%;object-fit:cover;display:block}
+.srv-body{padding:26px;flex:1;display:flex;flex-direction:column}
+.srv-tag-lbl{display:inline-block;background:rgba(201,169,110,.12);color:var(--gold);padding:3px 11px;border-radius:20px;font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+.srv-name{font-family:'Playfair Display',serif;font-size:21px;font-weight:600;color:var(--charcoal);margin-bottom:9px}
+.srv-desc{font-size:12px;color:var(--text-light);line-height:1.75;margin-bottom:18px}
+.srv-footer{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:16px}
+.srv-price{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--gold)}
+.srv-dur{font-size:11px;color:var(--text-light);margin-top:2px}
+.srv-book{background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:var(--white);padding:9px 20px;border:none;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;transition:all .3s;box-shadow:0 6px 18px rgba(201,169,110,.36);white-space:nowrap}
+.srv-book:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(201,169,110,.48);color:var(--white)}
+
+/* ── PRICING ── */
+.pricing-section{background:var(--charcoal)}
+.pricing-section .sec-title{color:var(--white)}
+.pricing-section .sec-sub{color:rgba(255,255,255,.5)}
+.pricing-section .sec-tag{color:var(--gold-light)}
+.pricing-head{text-align:center;margin-bottom:60px}
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:56px}
+.p-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:38px;position:relative;transition:all .3s}
+.p-card.feat{border-color:var(--gold);background:rgba(201,169,110,.07)}
+.p-card:hover{border-color:var(--gold);transform:translateY(-4px)}
+.pop-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--white);padding:5px 18px;border-radius:20px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap}
+.p-svc{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.p-title{font-family:'Playfair Display',serif;font-size:26px;color:var(--white);margin-bottom:20px}
+.p-per{font-size:13px;color:rgba(255,255,255,.45);margin-bottom:6px}
+.p-amount{font-family:'Playfair Display',serif;font-size:50px;font-weight:700;color:var(--white);margin-bottom:4px}
+.p-amount span{font-size:22px;color:rgba(255,255,255,.45)}
+.p-course{display:flex;align-items:center;justify-content:space-between;background:rgba(201,169,110,.1);border-radius:11px;padding:14px 18px;margin:22px 0}
+.p-course-lbl{font-size:12px;color:rgba(255,255,255,.55)}
+.p-course-price{font-size:18px;font-weight:600;color:var(--white)}
+.p-save-badge{background:rgba(201,169,110,.2);border:1px solid var(--gold);color:var(--gold);padding:3px 11px;border-radius:20px;font-size:10px;font-weight:700}
+.p-feats{list-style:none;margin-bottom:30px}
+.p-feats li{display:flex;align-items:center;gap:9px;font-size:12px;color:rgba(255,255,255,.6);padding:7px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.p-feats li::before{content:'✦';color:var(--gold);font-size:9px;flex-shrink:0}
+
+/* ── CALCULATOR ── */
+.calc-widget{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:44px;max-width:740px;margin:0 auto 56px}
+.calc-title{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--white);text-align:center;margin-bottom:32px}
+.calc-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px}
+.dark-select{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:var(--white);padding:13px 18px;border-radius:11px;font-family:'Montserrat',sans-serif;font-size:13px;cursor:pointer;width:100%;outline:none}
+.dark-select option{background:#2C2416}
+.calc-res{background:linear-gradient(135deg,rgba(201,169,110,.14),rgba(201,169,110,.04));border:1px solid rgba(201,169,110,.28);border-radius:14px;padding:26px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;text-align:center}
+.c-lbl{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:7px}
+.c-val{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--white)}
+.c-val.gold{color:var(--gold)}
+
+/* ── GIFT ── */
+.gift-wrap{max-width:740px;margin:0 auto}
+.gift-head{text-align:center;margin-bottom:36px}
+.gift-visual{background:linear-gradient(135deg,#7A5810,#C9A96E,#7A5810);border-radius:22px;padding:44px;position:relative;overflow:hidden;margin-bottom:28px}
+.gift-visual::before{content:'';position:absolute;top:-60px;right:-60px;width:190px;height:190px;border-radius:50%;background:rgba(255,255,255,.09)}
+.gift-visual::after{content:'';position:absolute;bottom:-40px;left:-40px;width:140px;height:140px;border-radius:50%;background:rgba(255,255,255,.05)}
+.gift-logo{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:rgba(255,255,255,.85);margin-bottom:28px;letter-spacing:3px;position:relative;z-index:1}
+.gift-caption{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--white);margin-bottom:10px;position:relative;z-index:1}
+.gift-amount{font-family:'Playfair Display',serif;font-size:52px;font-weight:700;color:var(--white);position:relative;z-index:1}
+.gift-form{display:grid;gap:14px}
+.gift-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.dark-input{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:var(--white);padding:14px 18px;border-radius:11px;font-family:'Montserrat',sans-serif;font-size:13px;outline:none;width:100%}
+.dark-input::placeholder{color:rgba(255,255,255,.38)}
+.dark-input:focus{border-color:var(--gold)}
+
+/* ── BOOKING ── */
+.booking-section{background:var(--cream)}
+.booking-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.booking-form-card{background:var(--white);border-radius:26px;padding:44px;box-shadow:var(--shadow)}
+.form-title{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:var(--charcoal);margin-bottom:30px}
+.fg{margin-bottom:18px}
+.flbl{display:block;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--text-light);margin-bottom:7px}
+.finput{width:100%;padding:13px 17px;border:1.5px solid var(--cream-dark);border-radius:11px;font-family:'Montserrat',sans-serif;font-size:13px;color:var(--text);background:var(--cream);outline:none;transition:border-color .3s}
+.finput:focus{border-color:var(--gold)}
+.f2col{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+/* calendar */
+.cal-widget{background:var(--white);border-radius:14px;padding:20px;border:1.5px solid var(--cream-dark);margin-bottom:16px}
+.cal-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.cal-month{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--charcoal)}
+.cal-nav{width:34px;height:34px;border:1.5px solid var(--cream-dark);border-radius:50%;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--text-light);transition:all .3s}
+.cal-nav:hover{border-color:var(--gold);color:var(--gold)}
+.cal-dnames{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:6px}
+.dname{text-align:center;font-size:10px;font-weight:600;letter-spacing:.5px;color:var(--text-light);padding:4px}
+.cal-days{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
+.cday{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;border-radius:50%;cursor:pointer;color:var(--text);transition:all .2s;border:none;background:none;font-family:'Montserrat',sans-serif}
+.cday:hover:not(.empty):not(.dis){background:var(--cream-dark);color:var(--gold)}
+.cday.today{border:1.5px solid var(--gold);color:var(--gold)}
+.cday.sel{background:var(--gold)!important;color:var(--white)!important}
+.cday.dis{color:var(--cream-dark);cursor:not-allowed}
+.cday.empty{cursor:default}
+/* time */
+.time-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
+.tslot{padding:9px;border:1.5px solid var(--cream-dark);border-radius:9px;text-align:center;font-size:12px;font-weight:500;cursor:pointer;transition:all .2s;color:var(--text);background:none;font-family:'Montserrat',sans-serif}
+.tslot:hover:not(.booked){border-color:var(--gold);color:var(--gold)}
+.tslot.sel{background:var(--gold);border-color:var(--gold);color:var(--white)}
+.tslot.booked{color:var(--cream-dark);cursor:not-allowed;text-decoration:line-through}
+/* why list */
+.why-list{margin-bottom:36px}
+.why-item{display:flex;gap:14px;margin-bottom:22px}
+.why-icon{width:46px;height:46px;background:linear-gradient(135deg,var(--gold-light),var(--gold));border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.why-text strong{display:block;font-size:14px;font-weight:600;color:var(--charcoal);margin-bottom:3px}
+.why-text span{font-size:12px;color:var(--text-light);line-height:1.65}
+.contacts-box{background:var(--cream-dark);border-radius:18px;padding:26px}
+.c-item{display:flex;align-items:center;gap:13px;margin-bottom:14px;text-decoration:none}
+.c-item:last-child{margin-bottom:0}
+.c-ico{width:38px;height:38px;background:var(--white);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px}
+.c-txt strong{display:block;font-size:13px;font-weight:600;color:var(--charcoal)}
+.c-txt span{font-size:11px;color:var(--text-light)}
+
+/* ── FOOTER ── */
+footer{background:var(--charcoal);padding:60px 0 28px}
+.ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:56px;margin-bottom:44px}
+.ft-logo{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--gold);letter-spacing:2px;margin-bottom:14px}
+.ft-tag{font-size:13px;color:rgba(255,255,255,.45);line-height:1.75;margin-bottom:22px}
+.socials{display:flex;gap:10px}
+.soc{width:38px;height:38px;background:rgba(255,255,255,.07);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px;text-decoration:none;transition:all .3s}
+.soc:hover{background:var(--gold)}
+.ft-head{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.ft-links{list-style:none}
+.ft-links li{margin-bottom:10px}
+.ft-links a{text-decoration:none;font-size:13px;color:rgba(255,255,255,.45);transition:color .3s}
+.ft-links a:hover{color:var(--gold-light)}
+.ft-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:26px;display:flex;justify-content:space-between;align-items:center}
+.ft-copy{font-size:12px;color:rgba(255,255,255,.25)}
+
+/* ── MODAL ── */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);z-index:9999;display:none;align-items:center;justify-content:center}
+.overlay.open{display:flex}
+.modal{background:var(--charcoal);border-radius:26px;padding:44px;max-width:480px;width:90%;position:relative;animation:slideUp .4s ease}
+.modal-close{position:absolute;top:18px;right:18px;width:34px;height:34px;background:rgba(255,255,255,.09);border-radius:50%;border:none;cursor:pointer;color:var(--white);font-size:17px;display:flex;align-items:center;justify-content:center;transition:background .3s}
+.modal-close:hover{background:rgba(255,255,255,.15)}
+.m-title{font-family:'Playfair Display',serif;font-size:28px;color:var(--white);margin-bottom:7px}
+.m-sub{font-size:13px;color:rgba(255,255,255,.45);margin-bottom:28px;line-height:1.65}
+.m-form{display:grid;gap:12px}
+
+/* ── ANIMATIONS ── */
+.fade-up{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.fade-up.in{opacity:1;transform:translateY(0)}
+
+/* ── FLOAT ASK BTN ── */
+.ask-float{position:fixed;bottom:28px;left:28px;background:var(--charcoal);color:var(--white);border:1.5px solid rgba(201,169,110,.4);padding:13px 22px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;cursor:pointer;z-index:9998;transition:all .3s;box-shadow:0 8px 28px rgba(44,36,22,.25);display:flex;align-items:center;gap:8px}
+.ask-float:hover{background:var(--gold);border-color:var(--gold);transform:translateY(-2px)}
+textarea.dark-input{resize:none;min-height:88px;line-height:1.6}
+
+/* ── SUCCESS TOAST ── */
+#toast{position:fixed;bottom:28px;right:28px;background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:var(--white);padding:15px 26px;border-radius:14px;font-size:13px;font-weight:500;z-index:99999;display:none;box-shadow:0 8px 28px rgba(201,169,110,.4);animation:slideUp .4s ease;max-width:340px;line-height:1.55}
+
+/* ── LEAD MAGNET ── */
+.leadmag-section{background:linear-gradient(160deg,var(--charcoal) 0%,#3D3020 100%);position:relative;overflow:hidden}
+.leadmag-section::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(201,169,110,.07) 0%,transparent 70%);pointer-events:none}
+.lm-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.lm-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,169,110,.14);border:1px solid rgba(201,169,110,.32);padding:8px 18px;border-radius:30px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light);margin-bottom:20px}
+.lm-title{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;color:var(--white);line-height:1.2;margin-bottom:18px}
+.lm-title em{color:var(--gold);font-style:italic}
+.lm-desc{font-size:15px;color:rgba(255,255,255,.6);line-height:1.85;font-weight:500;margin-bottom:28px}
+.lm-list{list-style:none;margin-bottom:36px}
+.lm-list li{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:500;color:rgba(255,255,255,.75);padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.lm-list li::before{content:'✦';color:var(--gold);font-size:10px;flex-shrink:0}
+.btn-tg{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:var(--white);padding:17px 36px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;text-decoration:none;transition:all .3s;box-shadow:0 8px 28px rgba(201,169,110,.38);letter-spacing:.4px}
+.btn-tg:hover{transform:translateY(-2px);box-shadow:0 12px 38px rgba(201,169,110,.48)}
+.lm-proof{font-size:12px;color:rgba(255,255,255,.35);font-weight:600;margin-top:16px;letter-spacing:.5px}
+.lm-video-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:24px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.3)}
+.lm-thumb{position:relative;aspect-ratio:16/9;overflow:hidden;background:#1A1208;cursor:pointer}
+.lm-thumb img{width:100%;height:100%;object-fit:cover;opacity:.65;transition:opacity .4s}
+.lm-thumb:hover img{opacity:.8}
+.lm-play-wrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px}
+.lm-play-btn{width:72px;height:72px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;color:var(--white);text-decoration:none;transition:transform .3s;box-shadow:0 8px 30px rgba(201,169,110,.5)}
+.lm-play-btn:hover{transform:scale(1.1)}
+.lm-play-label{font-size:12px;font-weight:600;color:rgba(255,255,255,.8);letter-spacing:.5px;background:rgba(0,0,0,.4);padding:5px 14px;border-radius:20px}
+.lm-video-info{padding:20px 24px 16px}
+.lm-video-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--white);margin-bottom:6px}
+.lm-video-meta{font-size:12px;color:rgba(255,255,255,.4);font-weight:500}
+.lm-video-tags{display:flex;gap:8px;flex-wrap:wrap;padding:0 24px 20px}
+.lm-video-tags span{background:rgba(201,169,110,.12);border:1px solid rgba(201,169,110,.25);padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600;color:var(--gold-light)}
+.lm-perks{display:grid;gap:10px;margin-top:18px}
+.lm-perk{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:13px 18px;font-size:13px;font-weight:500;color:rgba(255,255,255,.65);display:flex;align-items:center;gap:10px}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .lm-grid{grid-template-columns:1fr}
+  .hero-content{grid-template-columns:1fr;padding:120px 40px 70px}
+  .hero-visual{display:none}
+  .hero-title{font-size:50px}
+  nav{padding:18px 40px}
+  nav.scrolled{padding:13px 40px}
+  .container{padding:0 40px}
+  .quiz-opts{grid-template-columns:1fr 1fr}
+  .team-grid,.pricing-grid,.booking-grid{grid-template-columns:1fr}
+  .srv-grid{grid-template-columns:1fr 1fr}
+  .ft-grid{grid-template-columns:1fr 1fr;gap:36px}
+  .ba-stats{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  nav{padding:14px 24px}
+  nav.scrolled{padding:11px 24px}
+  .nav-links{display:none}
+  .container{padding:0 22px}
+  section{padding:70px 0}
+  .hero-content{padding:100px 22px 60px}
+  .hero-title{font-size:38px}
+  .hero-stats{gap:22px}
+  .sec-title{font-size:34px}
+  .quiz-opts{grid-template-columns:1fr}
+  .team-grid,.srv-grid{grid-template-columns:1fr}
+  .calc-row,.f2col,.gift-row{grid-template-columns:1fr}
+  .calc-res{grid-template-columns:1fr}
+  .ft-grid{grid-template-columns:1fr;gap:28px}
+  .booking-form-card{padding:26px}
+  .time-grid{grid-template-columns:repeat(3,1fr)}
+  .pricing-grid{grid-template-columns:1fr}
+  .ba-stats{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-logo" href="#">LUX</a>
+  <ul class="nav-links">
+    <li><a href="#quiz">Підбір програми</a></li>
+    <li><a href="#results">До/після</a></li>
+    <li><a href="#team">Команда</a></li>
+    <li><a href="#services">Послуги</a></li>
+    <li><a href="#pricing">Ціни</a></li>
+    <li><a href="#leadmag">Відео</a></li>
+    <li><a href="#booking">Онлайн-запис</a></li>
+    <li><a href="#booking" class="nav-cta">Записатися</a></li>
+  </ul>
+</nav>
+
+<!-- ① HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-deco"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge">✦ Преміум центр краси та тіла · Київ</div>
+      <h1 class="hero-title">Ваше тіло<br>заслуговує на<br><em>досконалість</em></h1>
+      <p class="hero-sub">LPG-масаж, кавітація та вакуумна терапія — сертифіковані фахівці, преміум-обладнання і результат, що видно вже після першого сеансу.</p>
+      <div class="hero-btns">
+        <a href="#booking" class="btn-primary">📅 Записатися на консультацію</a>
+        <a href="#quiz" class="btn-outline">✨ Обрати послугу</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-num">1 200+</div><div class="stat-lbl">Задоволених клієнток</div></div>
+        <div><div class="stat-num">7</div><div class="stat-lbl">Років на ринку</div></div>
+        <div><div class="stat-num">98%</div><div class="stat-lbl">Повертаються знову</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <img src="assets/фото1.jpg" alt="LUX Body Studio">
+        <div class="float-card float-card-1">
+          <div class="float-icon">⭐</div>
+          <div class="float-text"><strong>4.9 / 5.0</strong><span>560 відгуків</span></div>
+        </div>
+        <div class="float-card float-card-2">
+          <div class="float-icon">🏆</div>
+          <div class="float-text"><strong>TOP-3 Київ</strong><span>Рейтинг 2024</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ② QUIZ -->
+<section class="quiz-section" id="quiz">
+  <div class="container">
+    <div class="quiz-head fade-up">
+      <span class="sec-tag">✦ Персональний підбір</span>
+      <h2 class="sec-title">Знайдіть свою<br><em style="font-style:italic">ідеальну процедуру</em></h2>
+      <p class="sec-sub" style="margin:0 auto">Дайте відповідь на 3 запитання — і ми підберемо саме те, що дасть вам результат</p>
+    </div>
+
+    <div class="quiz-progress" id="qprogress">
+      <div class="q-step active" id="qs1">1</div>
+      <div class="q-line" id="ql1"></div>
+      <div class="q-step" id="qs2">2</div>
+      <div class="q-line" id="ql2"></div>
+      <div class="q-step" id="qs3">3</div>
+    </div>
+
+    <!-- Q1 -->
+    <div class="quiz-q active" id="qq1">
+      <div class="q-text">Яку зону ви хочете скоригувати?</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt" onclick="pick(1,'abdomen',this)">
+          <img class="opt-img" src="assets/живіт.jpg" alt="Живіт та боки">
+          <div class="opt-lbl">Живіт та боки</div>
+          <div class="opt-desc">Корекція талії, плоский живіт, прибрати «рятувальне коло»</div>
+        </div>
+        <div class="quiz-opt" onclick="pick(1,'hips',this)">
+          <img class="opt-img" src="assets/стегна.jpg" alt="Стегна та сідниці">
+          <div class="opt-lbl">Стегна та сідниці</div>
+          <div class="opt-desc">Підтяжка, корекція целюліту, моделювання форми</div>
+        </div>
+        <div class="quiz-opt" onclick="pick(1,'full',this)">
+          <img class="opt-img" src="assets/все%20тіло.jpg" alt="Все тіло">
+          <div class="opt-lbl">Все тіло</div>
+          <div class="opt-desc">Комплексне схуднення, лімфодренаж та загальне оновлення</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="quiz-q" id="qq2">
+      <div class="q-text">Чи є у вас набряки або відчуття важкості?</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt" onclick="pick(2,'yes',this)">
+          <span class="opt-emoji">💧</span>
+          <div class="opt-lbl">Так, постійно</div>
+          <div class="opt-desc">Набряклі ноги ввечері, сліди від одягу, відчуття важкості</div>
+        </div>
+        <div class="quiz-opt" onclick="pick(2,'sometimes',this)">
+          <span class="opt-emoji">🌊</span>
+          <div class="opt-lbl">Іноді буває</div>
+          <div class="opt-desc">Набряки після тривалого сидіння або перед менструацією</div>
+        </div>
+        <div class="quiz-opt" onclick="pick(2,'no',this)">
+          <span class="opt-emoji">💨</span>
+          <div class="opt-lbl">Набряків немає</div>
+          <div class="opt-desc">Ціль — форма тіла, схуднення та підтяжка шкіри</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="quiz-q" id="qq3">
+      <div class="q-text">Якого результату ви очікуєте?</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt" onclick="pick(3,'slim',this)">
+          <span class="opt-emoji">⚡</span>
+          <div class="opt-lbl">Схуднення та об'єми</div>
+          <div class="opt-desc">Мінус сантиметри, корекція фігури, видимий ефект</div>
+        </div>
+        <div class="quiz-opt" onclick="pick(3,'skin',this)">
+          <span class="opt-emoji">🌸</span>
+          <div class="opt-lbl">Пружна шкіра</div>
+          <div class="opt-desc">Боротьба з целюлітом, підтяжка, шовковиста текстура</div>
+        </div>
+        <div class="quiz-opt" onclick="pick(3,'relax',this)">
+          <span class="opt-emoji">🌿</span>
+          <div class="opt-lbl">Розслаблення</div>
+          <div class="opt-desc">Зняти напругу, покращити кровообіг, відновитися</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESULT -->
+    <div class="quiz-result" id="qresult">
+      <div class="res-badge">✦ Ваш результат готовий</div>
+      <div class="res-name" id="rName"></div>
+      <div class="res-desc" id="rDesc"></div>
+      <div class="res-video" id="rVideo">
+        <button class="play-btn">▶</button>
+        <div class="res-video-lbl" id="rVidLbl"></div>
+      </div>
+      <div class="res-cta">
+        <a href="#booking" class="btn-primary">📅 Записатися на процедуру</a>
+        <button class="btn-outline" style="border-color:rgba(255,255,255,.3);color:var(--white)" onclick="resetQuiz()">↩ Пройти ще раз</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ③ BEFORE / AFTER -->
+<section class="ba-section" id="results">
+  <div class="container">
+    <div class="ba-head fade-up">
+      <span class="sec-tag">✦ Реальні результати</span>
+      <h2 class="sec-title">Результати, що говорять<br><em style="font-style:italic">самі за себе</em></h2>
+      <p class="sec-sub" style="margin:0 auto">Справжні фото наших клієнток після курсу. Без фільтрів, без фотошопу.</p>
+    </div>
+    <div class="ba-tabs">
+      <button class="ba-tab active" onclick="switchTab(0,this)">LPG-масаж</button>
+      <button class="ba-tab" onclick="switchTab(1,this)">Кавітація</button>
+      <button class="ba-tab" onclick="switchTab(2,this)">Вакуумний масаж</button>
+    </div>
+    <div class="ba-wrap fade-up">
+      <div class="ba-slider" id="baSlider">
+        <div class="ba-before">
+          <div class="ba-before-bg">
+            <img src="assets/допісля1.jpg" alt="До процедури">
+          </div>
+          <div class="ba-lbl">ДО</div>
+        </div>
+        <div class="ba-after" id="baAfter">
+          <div class="ba-after-bg">
+            <img src="assets/допісля2.jpg" alt="Після процедури">
+          </div>
+          <div class="ba-lbl" style="right:18px;left:auto">ПІСЛЯ</div>
+        </div>
+        <div class="ba-divider" id="baDivider">
+          <div class="ba-handle">⬌</div>
+        </div>
+      </div>
+    </div>
+    <div class="ba-stats fade-up">
+      <div class="ba-stat"><div class="ba-stat-num">-8 см</div><div class="ba-stat-lbl">В об'ємі талії після 10 сеансів</div></div>
+      <div class="ba-stat"><div class="ba-stat-num">-4 кг</div><div class="ba-stat-lbl">Середнє схуднення за курс</div></div>
+      <div class="ba-stat"><div class="ba-stat-num">1 сеанс</div><div class="ba-stat-lbl">Видимий результат уже після першого</div></div>
+      <div class="ba-stat"><div class="ba-stat-num">97%</div><div class="ba-stat-lbl">Клієнток задоволені результатом</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ④ TEAM -->
+<section class="team-section" id="team">
+  <div class="container">
+    <div class="team-head fade-up">
+      <span class="sec-tag">✦ Наша команда</span>
+      <h2 class="sec-title">Довіра та <em style="font-style:italic">безпека</em></h2>
+      <p class="sec-sub" style="margin:0 auto">Кожен фахівець — сертифікований профі з профільною медичною або косметологічною освітою</p>
+    </div>
+    <div class="team-grid">
+
+      <div class="team-card fade-up">
+        <div class="team-photo">
+          <img src="assets/команда1.jpg" alt="Олена Коваль">
+          <span class="cert-badge">✦ Сертифікований фахівець</span>
+          <button class="vid-btn" onclick="openVideo('Олена Коваль')">▶</button>
+        </div>
+        <div class="team-info">
+          <div class="team-name">Олена Коваль</div>
+          <div class="team-role">Косметолог-естетист · LPG-терапевт</div>
+          <div class="team-bio">9 років досвіду в апаратній косметології. Спеціалізація: LPG Endermologie та ліфтинг. Проходила навчання в Endermologie Academy (Париж).</div>
+          <div class="team-tags">
+            <span class="t-tag">LPG Level III</span>
+            <span class="t-tag">KAMS Certified</span>
+            <span class="t-tag">CIDESCO</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-card fade-up">
+        <div class="team-photo">
+          <img src="assets/команда8.jpg" alt="Вікторія Мороз">
+          <span class="cert-badge">✦ Медична освіта</span>
+          <button class="vid-btn" onclick="openVideo('Вікторія Мороз')">▶</button>
+        </div>
+        <div class="team-info">
+          <div class="team-name">Вікторія Мороз</div>
+          <div class="team-role">Лікар-косметолог · Кавітація</div>
+          <div class="team-bio">Медик за освітою, 11 років у естетичній медицині. Авторські програми схуднення з доведеними результатами. Понад 3 000 сеансів кавітації.</div>
+          <div class="team-tags">
+            <span class="t-tag">Лікар-косметолог</span>
+            <span class="t-tag">Ультразвук</span>
+            <span class="t-tag">EU Certificate</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-card fade-up">
+        <div class="team-photo">
+          <img src="assets/команда9.jpg" alt="Наталя Лисенко">
+          <span class="cert-badge">✦ Майстер вищої категорії</span>
+          <button class="vid-btn" onclick="openVideo('Наталя Лисенко')">▶</button>
+        </div>
+        <div class="team-info">
+          <div class="team-name">Наталя Лисенко</div>
+          <div class="team-role">Масажист · Вакуумна терапія</div>
+          <div class="team-bio">Майстер масажу вищої категорії. 8 років практики, спеціалізація на антицелюлітних та лімфодренажних техніках. Постійне підвищення кваліфікації.</div>
+          <div class="team-tags">
+            <span class="t-tag">Масажист В.К.</span>
+            <span class="t-tag">Лімфодренаж</span>
+            <span class="t-tag">Вакуум-RF</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="srv-section" id="services">
+  <div class="container">
+    <div class="srv-head fade-up">
+      <span class="sec-tag">✦ Послуги</span>
+      <h2 class="sec-title">Що ми пропонуємо</h2>
+      <p class="sec-sub" style="margin:0 auto">Сучасні апаратні методики для корекції фігури та відновлення шкіри</p>
+    </div>
+    <div class="srv-grid">
+      <div class="srv-card fade-up">
+        <div class="srv-img"><img src="assets/послуга1.jpg" alt="LPG Endermologie"></div>
+        <div class="srv-body">
+          <span class="srv-tag-lbl">Хіт сезону</span>
+          <div class="srv-name">LPG Endermologie</div>
+          <div class="srv-desc">Апаратний масаж, що реактивує «сплячі» клітини. Мінус 2–5 см після курсу, позбавляє від целюліту будь-якого ступеня, підтягує шкіру.</div>
+          <div class="srv-footer">
+            <div><div class="srv-price">від 800 грн</div><div class="srv-dur">45–60 хв</div></div>
+            <a href="#booking" class="srv-book">Записатись</a>
+          </div>
+        </div>
+      </div>
+      <div class="srv-card fade-up">
+        <div class="srv-img"><img src="assets/послуга2.jpg" alt="Ультразвукова кавітація"></div>
+        <div class="srv-body">
+          <span class="srv-tag-lbl">Швидкий результат</span>
+          <div class="srv-name">Ультразвукова кавітація</div>
+          <div class="srv-desc">Руйнує жирові клітини без хірургії. Ефект ліпосакції без болю та реабілітації. Помітне зменшення об'ємів уже після 1 сеансу.</div>
+          <div class="srv-footer">
+            <div><div class="srv-price">від 950 грн</div><div class="srv-dur">50 хв</div></div>
+            <a href="#booking" class="srv-book">Записатись</a>
+          </div>
+        </div>
+      </div>
+      <div class="srv-card fade-up">
+        <div class="srv-img"><img src="assets/послуга3.jpg" alt="Вакуумний масаж"></div>
+        <div class="srv-body">
+          <span class="srv-tag-lbl">Лімфодренаж</span>
+          <div class="srv-name">Вакуумний масаж</div>
+          <div class="srv-desc">Усуває набряки, покращує кровообіг, розбиває жирові відкладення. Ідеальний старт курсу для виведення токсинів і рідини.</div>
+          <div class="srv-footer">
+            <div><div class="srv-price">від 700 грн</div><div class="srv-dur">40–50 хв</div></div>
+            <a href="#booking" class="srv-book">Записатись</a>
+          </div>
+        </div>
+      </div>
+      <div class="srv-card fade-up">
+        <div class="srv-img"><img src="assets/послуга4.jpg" alt="RF-ліфтинг тіла"></div>
+        <div class="srv-body">
+          <span class="srv-tag-lbl">Комплекс</span>
+          <div class="srv-name">RF-ліфтинг тіла</div>
+          <div class="srv-desc">Радіочастотна терапія для підтяжки шкіри та вироблення колагену. Видимий ліфтинговий ефект після першого сеансу.</div>
+          <div class="srv-footer">
+            <div><div class="srv-price">від 1 100 грн</div><div class="srv-dur">55 хв</div></div>
+            <a href="#booking" class="srv-book">Записатись</a>
+          </div>
+        </div>
+      </div>
+      <div class="srv-card fade-up">
+        <div class="srv-img"><img src="assets/послуга5.jpg" alt="Pressotherapy"></div>
+        <div class="srv-body">
+          <span class="srv-tag-lbl">Антицелюліт</span>
+          <div class="srv-name">Pressotherapy</div>
+          <div class="srv-desc">Пресотерапія — повітряний масаж у спеціальному костюмі. Прискорює лімфовідток, знімає набряки, детокс і відновлення.</div>
+          <div class="srv-footer">
+            <div><div class="srv-price">від 650 грн</div><div class="srv-dur">40 хв</div></div>
+            <a href="#booking" class="srv-book">Записатись</a>
+          </div>
+        </div>
+      </div>
+      <div class="srv-card fade-up">
+        <div class="srv-img"><img src="assets/послуга6.jpg" alt="Курс Тіло мрії"></div>
+        <div class="srv-body">
+          <span class="srv-tag-lbl">VIP</span>
+          <div class="srv-name">Курс «Тіло мрії»</div>
+          <div class="srv-desc">Авторська програма 30 днів: LPG + кавітація + вакуум з нутриціологічним супроводом. Максимальний результат, гарантований курсом.</div>
+          <div class="srv-footer">
+            <div><div class="srv-price">від 8 500 грн</div><div class="srv-dur">Курс 30 днів</div></div>
+            <a href="#booking" class="srv-book">Записатись</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑤ PRICING + CALC + GIFT -->
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div class="pricing-head fade-up">
+      <span class="sec-tag">✦ Ціни та абонементи</span>
+      <h2 class="sec-title">Інвестуйте в себе <em style="font-style:italic">вигідно</em></h2>
+      <p class="sec-sub" style="margin:0 auto;color:rgba(255,255,255,.5)">Курс абонементу — до 25% дешевше, ніж окремі сеанси</p>
+    </div>
+
+    <!-- CALCULATOR -->
+    <div class="calc-widget fade-up">
+      <div class="calc-title">💎 Калькулятор вигоди</div>
+      <div class="calc-row">
+        <select class="dark-select" id="cSvc" onchange="calcUpdate()">
+          <option value="800">LPG Endermologie — 800 грн</option>
+          <option value="950">Кавітація — 950 грн</option>
+          <option value="700">Вакуумний масаж — 700 грн</option>
+          <option value="1100">RF-ліфтинг — 1 100 грн</option>
+          <option value="650">Pressotherapy — 650 грн</option>
+        </select>
+        <select class="dark-select" id="cSes" onchange="calcUpdate()">
+          <option value="5">5 сеансів (-10%)</option>
+          <option value="10" selected>10 сеансів (-20%)</option>
+          <option value="15">15 сеансів (-25%)</option>
+        </select>
+      </div>
+      <div class="calc-res">
+        <div><div class="c-lbl">Без абонементу</div><div class="c-val" id="cFull">9 500 грн</div></div>
+        <div><div class="c-lbl">З абонементом</div><div class="c-val" id="cDisc">7 600 грн</div></div>
+        <div><div class="c-lbl">Ваша вигода</div><div class="c-val gold" id="cSave">1 900 грн</div></div>
+      </div>
+      <button class="btn-primary" style="width:100%;justify-content:center;margin-top:28px" onclick="openModal()">💎 Замовити абонемент</button>
+    </div>
+
+    <!-- GIFT CERTIFICATE -->
+    <div class="gift-wrap fade-up">
+      <div class="gift-head">
+        <span class="sec-tag">✦ Подарункові сертифікати</span>
+        <h3 class="sec-title" style="color:var(--white);font-size:36px">Подаруйте красу</h3>
+        <p style="color:rgba(255,255,255,.5);font-size:14px;line-height:1.75">Сертифікат надходить на email або в месенджер миттєво після оплати.<br>Контакти одержувача автоматично потрапляють у вашу клієнтську базу.</p>
+      </div>
+      <div class="gift-visual">
+        <div class="gift-logo">LUX Body Studio</div>
+        <div class="gift-caption">Подарунковий сертифікат</div>
+        <div class="gift-amount" id="gDisp">1 500 грн</div>
+      </div>
+      <form class="gift-form" onsubmit="buyGift(event)">
+        <div class="gift-row">
+          <select class="dark-select" id="gAmt" onchange="giftUpdate()">
+            <option value="1500">1 500 грн — 1 сеанс</option>
+            <option value="2500">2 500 грн — Міні-курс</option>
+            <option value="5000">5 000 грн — Курс краси</option>
+            <option value="8500">8 500 грн — Курс «Тіло мрії»</option>
+          </select>
+          <select class="dark-select">
+            <option>Доставка на email</option>
+            <option>Telegram</option>
+            <option>Viber</option>
+          </select>
+        </div>
+        <div class="gift-row">
+          <input type="text" class="dark-input" placeholder="Ваше ім'я" required>
+          <input type="email" class="dark-input" placeholder="Email одержувача" required>
+        </div>
+        <input type="text" class="dark-input" placeholder="Привітальне повідомлення (необов'язково)">
+        <button type="submit" class="btn-primary" style="justify-content:center">💳 Оплатити та отримати сертифікат</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ⑤b LEAD MAGNET -->
+<section class="leadmag-section" id="leadmag">
+  <div class="container">
+    <div class="lm-grid">
+
+      <div class="lm-text fade-up">
+        <div class="lm-badge">🎁 Безкоштовно для вас</div>
+        <h2 class="lm-title">Хочете результат<br><em>між сеансами?</em></h2>
+        <p class="lm-desc">Наш сертифікований косметолог зняла ексклюзивне відео «5 технік лімфодренажного масажу вдома» — щоб ефект від процедур тримався довше, а шкіра сяяла щодня.</p>
+        <ul class="lm-list">
+          <li>Зменшення набряків за 10 хвилин на день</li>
+          <li>Техніки, що підсилюють ефект LPG та кавітації</li>
+          <li>Прості вправи без спеціального обладнання</li>
+          <li>Поради по харчуванню та водному балансу</li>
+        </ul>
+        <a href="https://t.me/luxbodystudio" target="_blank" class="btn-tg">
+          ▶ Дивитися відео
+        </a>
+        <div class="lm-proof">Вже 2 400+ підписників читають наш канал</div>
+      </div>
+
+      <div class="lm-visual fade-up">
+        <div class="lm-video-card">
+          <a href="https://t.me/luxbodystudio" target="_blank" class="lm-thumb">
+            <img src="assets/фото1.jpg" alt="Відео про домашній догляд">
+            <div class="lm-play-wrap">
+              <span class="lm-play-btn">▶</span>
+              <span class="lm-play-label">Дивитися безкоштовно</span>
+            </div>
+          </a>
+          <div class="lm-video-info">
+            <div class="lm-video-title">Лімфодренажний масаж вдома</div>
+            <div class="lm-video-meta">Олена Коваль, косметолог · 12 хвилин · Тільки для підписників</div>
+          </div>
+          <div class="lm-video-tags">
+            <span>Безкоштовно</span>
+            <span>Тільки в Telegram</span>
+            <span>Для всіх рівнів</span>
+          </div>
+        </div>
+        <div class="lm-perks">
+          <div class="lm-perk">📋 Щотижневі поради по догляду за шкірою</div>
+          <div class="lm-perk">🎯 Акції та знижки тільки для підписників</div>
+          <div class="lm-perk">📸 Результати клієнток до/після процедур</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ⑥ BOOKING -->
+<section class="booking-section" id="booking">
+  <div class="container">
+    <div class="booking-grid">
+
+      <div>
+        <div class="fade-up" style="margin-bottom:40px">
+          <span class="sec-tag">✦ Онлайн-запис</span>
+          <h2 class="sec-title">Запишіться за<br><em style="font-style:italic">2 хвилини</em></h2>
+          <p style="font-size:14px;color:var(--text-light);line-height:1.85;margin-bottom:32px">Оберіть зручний час, майстра та процедуру — і просто прийдіть. Без черг, без дзвінків.</p>
+        </div>
+        <div class="why-list fade-up">
+          <div class="why-item">
+            <div class="why-icon">🎯</div>
+            <div class="why-text"><strong>Персональний підхід</strong><span>Перед першим відвідуванням безкоштовна консультація та індивідуальна програма</span></div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">⏰</div>
+            <div class="why-text"><strong>Зручний графік</strong><span>Приймаємо щодня з 9:00 до 21:00. Вечірні та вихідні слоти без доплати</span></div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">🔒</div>
+            <div class="why-text"><strong>Гнучкий перезапис</strong><span>Нагадування за добу. Перезаписатись можна до 12 годин до сеансу</span></div>
+          </div>
+        </div>
+        <div class="contacts-box fade-up">
+          <a class="c-item" href="tel:+380671234567">
+            <div class="c-ico">📞</div>
+            <div class="c-txt"><strong>+38 (067) 123-45-67</strong><span>Щодня 9:00 – 21:00</span></div>
+          </a>
+          <a class="c-item" href="#">
+            <div class="c-ico">📷</div>
+            <div class="c-txt"><strong>@luxbodystudio</strong><span>Instagram · Telegram</span></div>
+          </a>
+          <a class="c-item" href="#">
+            <div class="c-ico">📍</div>
+            <div class="c-txt"><strong>вул. Хрещатик, 22, Київ</strong><span>ст. м. Хрещатик, вхід з боку вул. Городецького</span></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="booking-form-card fade-up">
+        <div class="form-title">Онлайн-запис</div>
+        <form onsubmit="submitBooking(event)">
+          <div class="f2col">
+            <div class="fg"><label class="flbl">Ваше ім'я</label><input class="finput" type="text" placeholder="Ольга" required></div>
+            <div class="fg"><label class="flbl">Телефон</label><input class="finput" type="tel" placeholder="+380..." required></div>
+          </div>
+          <div class="fg">
+            <label class="flbl">Послуга</label>
+            <select class="finput">
+              <option>LPG Endermologie</option>
+              <option>Ультразвукова кавітація</option>
+              <option>Вакуумний масаж</option>
+              <option>RF-ліфтинг тіла</option>
+              <option>Pressotherapy</option>
+              <option>Курс «Тіло мрії»</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label class="flbl">Майстер</label>
+            <select class="finput">
+              <option>Олена Коваль — LPG-терапевт</option>
+              <option>Вікторія Мороз — Кавітація</option>
+              <option>Наталя Лисенко — Вакуумний масаж</option>
+              <option>Будь-який вільний фахівець</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label class="flbl">Дата</label>
+            <div class="cal-widget">
+              <div class="cal-hdr">
+                <button type="button" class="cal-nav" onclick="chMonth(-1)">‹</button>
+                <div class="cal-month" id="calMon">Червень 2026</div>
+                <button type="button" class="cal-nav" onclick="chMonth(1)">›</button>
+              </div>
+              <div class="cal-dnames">
+                <div class="dname">Пн</div><div class="dname">Вт</div><div class="dname">Ср</div>
+                <div class="dname">Чт</div><div class="dname">Пт</div><div class="dname">Сб</div><div class="dname">Нд</div>
+              </div>
+              <div class="cal-days" id="calDays"></div>
+            </div>
+          </div>
+          <div class="fg">
+            <label class="flbl">Час</label>
+            <div class="time-grid">
+              <button type="button" class="tslot" onclick="pickTime(this)">09:00</button>
+              <button type="button" class="tslot" onclick="pickTime(this)">10:00</button>
+              <button type="button" class="tslot booked">11:00</button>
+              <button type="button" class="tslot" onclick="pickTime(this)">12:00</button>
+              <button type="button" class="tslot" onclick="pickTime(this)">13:00</button>
+              <button type="button" class="tslot booked">14:00</button>
+              <button type="button" class="tslot" onclick="pickTime(this)">15:00</button>
+              <button type="button" class="tslot" onclick="pickTime(this)">16:00</button>
+              <button type="button" class="tslot" onclick="pickTime(this)">17:00</button>
+              <button type="button" class="tslot booked">18:00</button>
+              <button type="button" class="tslot" onclick="pickTime(this)">19:00</button>
+              <button type="button" class="tslot" onclick="pickTime(this)">20:00</button>
+            </div>
+          </div>
+          <div class="fg"><label class="flbl">Коментар</label><input class="finput" type="text" placeholder="Є питання або побажання?"></div>
+          <button type="submit" class="btn-primary" style="width:100%;justify-content:center;margin-top:4px">✨ Підтвердити запис</button>
+          <p style="font-size:11px;color:var(--text-light);text-align:center;margin-top:14px;line-height:1.6">Підтвердження надійде протягом 5 хвилин. Натискаючи кнопку, ви погоджуєтесь з умовами обробки персональних даних.</p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="ft-grid">
+      <div>
+        <div class="ft-logo">LUX Body Studio</div>
+        <div class="ft-tag">Преміум центр апаратної косметології та корекції тіла в Києві. Ваш результат — наша репутація.</div>
+        <div class="socials">
+          <a href="https://facebook.com/luxbodystudio" target="_blank" class="soc" title="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="soc" title="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://t.me/luxbodystudio" target="_blank" class="soc" title="Telegram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8-1.7 8.02c-.12.56-.46.7-.93.43l-2.57-1.9-1.24 1.2c-.14.14-.26.26-.53.26l.19-2.66 4.85-4.38c.21-.19-.05-.29-.32-.1l-6 3.78-2.57-.8c-.56-.17-.57-.56.12-.83l10.02-3.86c.46-.17.87.11.68.84z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="ft-head">Послуги</div>
+        <ul class="ft-links">
+          <li><a href="#">LPG Endermologie</a></li>
+          <li><a href="#">Кавітація</a></li>
+          <li><a href="#">Вакуумний масаж</a></li>
+          <li><a href="#">RF-ліфтинг</a></li>
+          <li><a href="#">Pressotherapy</a></li>
+          <li><a href="#">Курс «Тіло мрії»</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-head">Студія</div>
+        <ul class="ft-links">
+          <li><a href="#">Про нас</a></li>
+          <li><a href="#">Команда</a></li>
+          <li><a href="#">Результати</a></li>
+          <li><a href="#">Відгуки</a></li>
+          <li><a href="#">Блог</a></li>
+          <li><a href="#">Акції</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-head">Контакти</div>
+        <ul class="ft-links">
+          <li><a href="tel:+380671234567">+38 (067) 123-45-67</a></li>
+          <li><a href="#">@luxbodystudio</a></li>
+          <li><a href="#">вул. Хрещатик, 22, Київ</a></li>
+          <li><a href="#">Пн–Нд: 9:00 – 21:00</a></li>
+        </ul>
+        <div style="margin-top:20px">
+          <button class="btn-primary" style="font-size:12px;padding:11px 20px" onclick="openModal()">📅 Записатись</button>
+        </div>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <div class="ft-copy">© 2026 LUX Body Studio. Всі права захищені.</div>
+      <div class="ft-copy">Політика конфіденційності · Умови використання</div>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL: Quick Booking -->
+<div class="overlay" id="mOverlay">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div class="m-title">Швидкий запис</div>
+    <div class="m-sub">Залиште контакти — ми зателефонуємо і підберемо зручний час</div>
+    <form class="m-form" onsubmit="submitModal(event)">
+      <input type="text" class="dark-input" placeholder="Ваше ім'я" required>
+      <input type="tel" class="dark-input" placeholder="Телефон або Telegram" required>
+      <select class="dark-input" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.75)">
+        <option style="background:#2C2416">LPG Endermologie</option>
+        <option style="background:#2C2416">Ультразвукова кавітація</option>
+        <option style="background:#2C2416">Вакуумний масаж</option>
+        <option style="background:#2C2416">Консультація (безкоштовно)</option>
+      </select>
+      <button type="submit" class="btn-primary" style="width:100%;justify-content:center">✨ Відправити заявку</button>
+    </form>
+  </div>
+</div>
+
+<!-- MODAL: Video -->
+<div class="overlay" id="vOverlay">
+  <div class="modal" style="max-width:580px">
+    <button class="modal-close" onclick="closeVideo()">×</button>
+    <div class="m-title" id="vTitle">Відеовізитка</div>
+    <div style="background:rgba(255,255,255,.05);border-radius:16px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;margin-top:18px">
+      <div style="text-align:center">
+        <button class="play-btn" style="margin:0 auto 14px">▶</button>
+        <div style="color:rgba(255,255,255,.45);font-size:12px">Відеовізитка майстра</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FLOAT ASK -->
+<button class="ask-float" onclick="openAskModal()">💬 Задати питання</button>
+
+<!-- MODAL: Ask -->
+<div class="overlay" id="askOverlay">
+  <div class="modal">
+    <button class="modal-close" onclick="closeAskModal()">×</button>
+    <div class="m-title">Задати питання</div>
+    <div class="m-sub">Залиште контакти — відповімо найближчим часом</div>
+    <form class="m-form" onsubmit="submitAsk(event)">
+      <input type="text" class="dark-input" placeholder="Ваше ім'я" required>
+      <input type="tel" class="dark-input" placeholder="Телефон" required>
+      <input type="email" class="dark-input" placeholder="Email" required>
+      <textarea class="dark-input" placeholder="Моє питання" required></textarea>
+      <button type="submit" class="btn-primary" style="width:100%;justify-content:center">✉️ Відправити питання</button>
+    </form>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<script>
+// ── NAV SCROLL ──
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>55));
+
+// ── FADE IN ──
+const obs=new IntersectionObserver(entries=>entries.forEach((e,i)=>{
+  if(e.isIntersecting)setTimeout(()=>e.target.classList.add('in'),i*90)
+}),{threshold:.1});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+
+// ── QUIZ ──
+const ans={};
+function pick(q,val,el){
+  ans['q'+q]=val;
+  document.querySelectorAll('#qq'+q+' .quiz-opt').forEach(o=>o.classList.remove('sel'));
+  el.classList.add('sel');
+  setTimeout(()=>q<3?goQ(q+1):showRes(),380);
+}
+function goQ(n){
+  document.querySelectorAll('.quiz-q').forEach(q=>q.classList.remove('active'));
+  document.getElementById('qq'+n).classList.add('active');
+  for(let i=1;i<=3;i++){
+    const s=document.getElementById('qs'+i);
+    if(i<n){s.className='q-step done';s.textContent='✓'}
+    else if(i===n){s.className='q-step active';s.textContent=i}
+    else{s.className='q-step';s.textContent=i}
+  }
+  for(let i=1;i<=2;i++)document.getElementById('ql'+i).className='q-line'+(i<n?' done':'');
+}
+function showRes(){
+  document.querySelectorAll('.quiz-q').forEach(q=>q.classList.remove('active'));
+  document.getElementById('qprogress').style.display='none';
+  const r=getRes();
+  document.getElementById('rName').textContent=r.name;
+  document.getElementById('rDesc').textContent=r.desc;
+  document.getElementById('rVidLbl').textContent=r.vid;
+  document.getElementById('qresult').classList.add('active');
+}
+function getRes(){
+  const {q1,q2,q3}=ans;
+  if(q2==='yes'||q2==='sometimes')return{name:'Вакуумний масаж',desc:'Ідеально для вас! Вакуумна терапія активно виводить лімфу, усуває набряки та запускає кровообіг. Вже після 2–3 сеансів набряки зменшаться, а об\'єми підуть.',vid:'Вакуумний масаж: процес та результат'};
+  if(q3==='slim'||q1==='abdomen')return{name:'Ультразвукова кавітація',desc:'Ваш запит — схуднення та корекція об\'ємів. Кавітація руйнує жирові клітини ультразвуком без болю. Мінус 1–3 см одразу після першого сеансу.',vid:'Кавітація: як це працює'};
+  return{name:'LPG Endermologie',desc:'Для вашої цілі LPG — ідеальний вибір! Апарат реактивує клітини шкіри, підтягує тіло та прибирає целюліт. Повний курс — трансформація тіла.',vid:'LPG Endermologie: магія апарату'};
+}
+function resetQuiz(){
+  Object.keys(ans).forEach(k=>delete ans[k]);
+  document.getElementById('qresult').classList.remove('active');
+  document.getElementById('qprogress').style.display='flex';
+  ['qs1','qs2','qs3'].forEach((id,i)=>{const s=document.getElementById(id);s.className='q-step'+(i===0?' active':'');s.textContent=i+1});
+  ['ql1','ql2'].forEach(id=>document.getElementById(id).className='q-line');
+  document.querySelectorAll('.quiz-opt').forEach(o=>o.classList.remove('sel'));
+  document.getElementById('qq1').classList.add('active');
+}
+
+// ── BEFORE/AFTER ──
+const slider=document.getElementById('baSlider');
+const baAfter=document.getElementById('baAfter');
+const baDivider=document.getElementById('baDivider');
+let drag=false;
+function setPos(x){
+  const r=slider.getBoundingClientRect();
+  let p=Math.max(5,Math.min(95,((x-r.left)/r.width)*100));
+  baAfter.style.clipPath=`inset(0 ${100-p}% 0 0)`;
+  baDivider.style.left=p+'%';
+}
+slider.addEventListener('mousedown',e=>{drag=true;setPos(e.clientX)});
+window.addEventListener('mouseup',()=>drag=false);
+window.addEventListener('mousemove',e=>{if(drag)setPos(e.clientX)});
+slider.addEventListener('touchstart',e=>{drag=true;setPos(e.touches[0].clientX)},{passive:true});
+window.addEventListener('touchend',()=>drag=false);
+window.addEventListener('touchmove',e=>{if(drag)setPos(e.touches[0].clientX)},{passive:true});
+function switchTab(i,el){
+  document.querySelectorAll('.ba-tab').forEach((t,j)=>t.classList.toggle('active',j===i));
+  baAfter.style.clipPath='inset(0 50% 0 0)';
+  baDivider.style.left='50%';
+}
+
+// ── CALCULATOR ──
+const disc={5:.10,10:.20,15:.25};
+function calcUpdate(){
+  const price=+document.getElementById('cSvc').value;
+  const ses=+document.getElementById('cSes').value;
+  const full=price*ses;
+  const d=Math.round(full*(1-disc[ses]));
+  const fmt=n=>n.toLocaleString('uk-UA')+' грн';
+  document.getElementById('cFull').textContent=fmt(full);
+  document.getElementById('cDisc').textContent=fmt(d);
+  document.getElementById('cSave').textContent=fmt(full-d);
+}
+
+// ── GIFT ──
+function giftUpdate(){
+  const v=+document.getElementById('gAmt').value;
+  document.getElementById('gDisp').textContent=v.toLocaleString('uk-UA')+' грн';
+}
+function buyGift(e){
+  e.preventDefault();
+  toast('🎁 Сертифікат оплачено! Перевірте пошту — він вже летить до вас.');
+}
+
+// ── CALENDAR ──
+const MONTHS=['Січень','Лютий','Березень','Квітень','Травень','Червень','Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'];
+let cy=2026,cm=5,selDay=null;
+function renderCal(){
+  document.getElementById('calMon').textContent=MONTHS[cm]+' '+cy;
+  const el=document.getElementById('calDays');
+  el.innerHTML='';
+  const first=new Date(cy,cm,1).getDay();
+  const off=(first===0)?6:first-1;
+  const days=new Date(cy,cm+1,0).getDate();
+  const today=new Date();
+  for(let i=0;i<off;i++){const d=document.createElement('button');d.type='button';d.className='cday empty';el.appendChild(d)}
+  for(let d=1;d<=days;d++){
+    const btn=document.createElement('button');
+    btn.type='button';btn.className='cday';btn.textContent=d;
+    const dt=new Date(cy,cm,d);
+    const past=dt<new Date(today.getFullYear(),today.getMonth(),today.getDate());
+    if(past){btn.classList.add('dis')}
+    else{
+      if(d===today.getDate()&&cm===today.getMonth()&&cy===today.getFullYear())btn.classList.add('today');
+      btn.addEventListener('click',()=>{
+        document.querySelectorAll('.cday').forEach(x=>x.classList.remove('sel'));
+        btn.classList.add('sel');selDay=d;
+      });
+    }
+    el.appendChild(btn);
+  }
+}
+function chMonth(d){
+  cm+=d;if(cm>11){cm=0;cy++}if(cm<0){cm=11;cy--}
+  renderCal();
+}
+renderCal();
+
+// ── TIME ──
+function pickTime(el){
+  document.querySelectorAll('.tslot:not(.booked)').forEach(t=>t.classList.remove('sel'));
+  el.classList.add('sel');
+}
+
+// ── MODALS ──
+function openModal(){document.getElementById('mOverlay').classList.add('open');document.body.style.overflow='hidden'}
+function closeModal(){document.getElementById('mOverlay').classList.remove('open');document.body.style.overflow=''}
+function openVideo(name){document.getElementById('vTitle').textContent='Відеовізитка — '+name;document.getElementById('vOverlay').classList.add('open');document.body.style.overflow='hidden'}
+function closeVideo(){document.getElementById('vOverlay').classList.remove('open');document.body.style.overflow=''}
+document.querySelectorAll('.overlay').forEach(o=>o.addEventListener('click',e=>{if(e.target===o){o.classList.remove('open');document.body.style.overflow=''}}));
+
+// ── FORMS ──
+function submitModal(e){e.preventDefault();closeModal();toast('✅ Заявку прийнято! Ми зателефонуємо вам найближчим часом.')}
+function submitBooking(e){e.preventDefault();toast('✅ Запис підтверджено! SMS-нагадування надійде за добу.')}
+function openAskModal(){document.getElementById('askOverlay').classList.add('open');document.body.style.overflow='hidden'}
+function closeAskModal(){document.getElementById('askOverlay').classList.remove('open');document.body.style.overflow=''}
+function submitAsk(e){e.preventDefault();closeAskModal();toast('✅ Питання надіслано! Відповімо найближчим часом.')}
+
+// ── TOAST ──
+let toastTimer;
+function toast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.style.display='block';
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>t.style.display='none',4200);
+}
+
+// ── SMOOTH SCROLL ──
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+  const t=document.querySelector(a.getAttribute('href'));
+  if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}
+}));
+</script>
+</body>
+</html>
