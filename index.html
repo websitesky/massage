@@ -340,7 +340,19 @@ textarea.dark-input{resize:none;min-height:88px;line-height:1.6}
 /* ── MOBILE CALL BTN ── */
 .mobile-call-btn{display:none}
 @keyframes call-pulse{0%{box-shadow:0 0 0 0 rgba(201,169,110,.7)}70%{box-shadow:0 0 0 16px rgba(201,169,110,0)}100%{box-shadow:0 0 0 0 rgba(201,169,110,0)}}
-@keyframes call-ring{0%,100%{transform:rotate(0deg)}10%{transform:rotate(-15deg)}20%{transform:rotate(15deg)}30%{transform:rotate(-12deg)}40%{transform:rotate(12deg)}50%{transform:rotate(-8deg)}60%{transform:rotate(8deg)}70%{transform:rotate(0deg)}
+@keyframes call-ring{0%,100%{transform:rotate(0deg)}10%{transform:rotate(-15deg)}20%{transform:rotate(15deg)}30%{transform:rotate(-12deg)}40%{transform:rotate(12deg)}50%{transform:rotate(-8deg)}60%{transform:rotate(8deg)}70%{transform:rotate(0deg)}}
+
+/* ── BURGER NAV ── */
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;z-index:1002;flex-shrink:0}
+.burger span{display:block;width:24px;height:2px;background:var(--charcoal);transition:all .35s;border-radius:2px}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-nav{position:fixed;top:0;left:0;right:0;bottom:0;background:var(--cream);z-index:1001;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;transform:translateX(100%);transition:transform .4s cubic-bezier(.77,0,.175,1);padding:80px 40px 60px}
+.mob-nav.open{transform:translateX(0)}
+.mob-nav a{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--charcoal);text-decoration:none;letter-spacing:1px;transition:color .3s}
+.mob-nav a:hover,.mob-nav a:active{color:var(--gold)}
+.mob-cta{background:var(--gold)!important;color:var(--white)!important;padding:14px 44px;border-radius:50px;font-family:'Montserrat',sans-serif!important;font-size:15px!important;font-weight:700!important;margin-top:10px}
 
 /* ── RESPONSIVE ── */
 @media(max-width:1024px){
@@ -356,29 +368,71 @@ textarea.dark-input{resize:none;min-height:88px;line-height:1.6}
   .team-grid,.pricing-grid,.booking-grid{grid-template-columns:1fr}
   .srv-grid{grid-template-columns:1fr 1fr}
   .ft-grid{grid-template-columns:1fr 1fr;gap:36px}
-  .ba-stats{grid-template-columns:1fr 1fr}
 }
 @media(max-width:768px){
-  nav{padding:14px 24px}
-  nav.scrolled{padding:11px 24px}
+  nav{padding:13px 18px}
+  nav.scrolled{padding:11px 18px}
   .nav-links{display:none}
-  .container{padding:0 22px}
-  section{padding:70px 0}
-  .hero-content{padding:100px 22px 60px}
-  .hero-title{font-size:38px}
-  .hero-stats{gap:22px}
-  .sec-title{font-size:34px}
+  .burger{display:flex}
+  .container{padding:0 18px}
+  section{padding:60px 0}
+  .hero-content{padding:88px 18px 48px}
+  .hero-title{font-size:34px;line-height:1.18}
+  .hero-badge{font-size:10px;padding:7px 14px}
+  .hero-sub{font-size:14px;line-height:1.75;margin-bottom:28px}
+  .hero-btns{flex-direction:column;gap:10px}
+  .btn-primary,.btn-outline{width:100%;justify-content:center;padding:15px 20px;font-size:13px}
+  .hero-stats{gap:16px;margin-top:32px;padding-top:24px;flex-wrap:wrap}
+  .stat-num{font-size:26px}
+  .stat-lbl{font-size:10px}
+  .sec-title{font-size:28px}
+  .sec-sub{font-size:14px}
+  .q-text{font-size:22px;margin-bottom:22px}
   .quiz-opts{grid-template-columns:1fr}
+  .quiz-opt{padding:18px 16px}
+  .res-name{font-size:30px}
+  .res-desc{font-size:14px}
+  .about-photo-wrap img{height:260px}
+  .about-stats-row{gap:8px}
+  .about-stat{padding:12px 6px}
+  .about-stat-num{font-size:20px}
+  .about-stat-lbl{font-size:9px}
+  .about-lead{font-size:14px}
+  .about-why-icon{width:36px;height:36px;min-width:36px;font-size:15px;border-radius:10px}
+  .about-why-item strong{font-size:13px}
+  .about-why-item span{font-size:12px}
   .team-grid,.srv-grid{grid-template-columns:1fr}
+  .srv-img{height:180px}
+  .calc-widget{padding:24px 18px}
+  .calc-title{font-size:20px}
   .calc-row,.f2col,.gift-row{grid-template-columns:1fr}
-  .calc-res{grid-template-columns:1fr}
-  .ft-grid{grid-template-columns:1fr;gap:28px}
-  .booking-form-card{padding:26px}
-  .time-grid{grid-template-columns:repeat(3,1fr)}
+  .calc-res{grid-template-columns:1fr;gap:10px;padding:16px}
+  .gift-visual{padding:26px 20px}
+  .gift-amount{font-size:36px}
+  .gift-caption{font-size:24px}
+  .p-card{padding:24px 18px}
+  .p-amount{font-size:38px}
   .pricing-grid{grid-template-columns:1fr}
-  .ba-stats{grid-template-columns:1fr 1fr}
+  .lm-title{font-size:28px}
+  .lm-desc{font-size:14px}
+  .booking-grid{grid-template-columns:1fr}
+  .booking-form-card{padding:22px 16px}
+  .form-title{font-size:24px}
+  .time-grid{grid-template-columns:repeat(3,1fr)}
+  .ft-grid{grid-template-columns:1fr;gap:24px}
+  .ft-bottom{flex-direction:column;gap:8px;text-align:center}
+  .modal{padding:28px 20px;width:94%}
+  .m-title{font-size:22px}
+  .ask-float{bottom:90px;left:18px;font-size:12px;padding:11px 16px}
+  #toast{bottom:auto;top:18px;right:18px;left:18px;max-width:none}
   .mobile-call-btn{display:flex;align-items:center;justify-content:center;position:fixed;bottom:22px;right:22px;width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:var(--white);text-decoration:none;z-index:9997;animation:call-pulse 2s ease-out infinite}
   .mobile-call-btn svg{animation:call-ring 2s ease-in-out infinite;width:26px;height:26px}
+}
+@media(max-width:400px){
+  .hero-title{font-size:28px}
+  .sec-title{font-size:24px}
+  .about-stats-row{grid-template-columns:repeat(3,1fr)}
+  .mob-nav a{font-size:24px}
 }
 </style>
 </head>
@@ -397,7 +451,20 @@ textarea.dark-input{resize:none;min-height:88px;line-height:1.6}
     <li><a href="#booking">Онлайн-запис</a></li>
     <li><a href="#booking" class="nav-cta">Записатися</a></li>
   </ul>
+  <button class="burger" id="burger" onclick="toggleMobNav()" aria-label="Меню">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE NAV OVERLAY -->
+<div class="mob-nav" id="mobNav">
+  <a href="#results" onclick="closeMobNav()">Про нас</a>
+  <a href="#quiz" onclick="closeMobNav()">Підбір програми</a>
+  <a href="#services" onclick="closeMobNav()">Послуги</a>
+  <a href="#team" onclick="closeMobNav()">Команда</a>
+  <a href="#pricing" onclick="closeMobNav()">Ціни</a>
+  <a href="#booking" onclick="closeMobNav()" class="mob-cta">Записатися</a>
+</div>
 
 <!-- ① HERO -->
 <section class="hero" id="hero">
@@ -1118,6 +1185,20 @@ textarea.dark-input{resize:none;min-height:88px;line-height:1.6}
 <script>
 // ── NAV SCROLL ──
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>55));
+
+// ── MOBILE NAV ──
+function toggleMobNav(){
+  const nav=document.getElementById('mobNav');
+  const burger=document.getElementById('burger');
+  const open=nav.classList.toggle('open');
+  burger.classList.toggle('open',open);
+  document.body.style.overflow=open?'hidden':'';
+}
+function closeMobNav(){
+  document.getElementById('mobNav').classList.remove('open');
+  document.getElementById('burger').classList.remove('open');
+  document.body.style.overflow='';
+}
 
 // ── FADE IN ──
 const obs=new IntersectionObserver(entries=>entries.forEach((e,i)=>{
